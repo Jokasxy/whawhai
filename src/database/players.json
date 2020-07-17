@@ -1,0 +1,22 @@
+[
+    {
+        "name" : "Marvin",
+        "attacks" : ["Depression #1", "Depression #2", "Depression #3"] 
+    },
+    {
+        "name" : "Dragon",
+        "attacks" : ["Fire-Spitting", "Dragon-Claw", "Pound"] 
+    },
+    {
+        "name" : "Tesla",
+        "attacks" : ["Shaker-Machine", "AC voltage", "Radio Waves"] 
+    },
+    {
+        "name" : "Hackerman",
+        "attacks" : ["Cyber", "System32 Error", "Norton Antivirus"] 
+    },
+    {
+        "name" : "Unicorn",
+        "attacks" : ["Rainbowshit", "Candypuke", "Cornlove"] 
+    }
+]
