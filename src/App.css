@@ -12,10 +12,54 @@
 
 .avatar
 {
-    width: 150px;
+    width: 120px;
+}
+
+.ant-layout
+{
+    background: inherit !important;
+}
+
+.ant-layout-content
+{
+    max-width: 600px;
 }
 
 .ant-layout-header
 {
-    color: #FFDF59;
+    background: inherit !important;
+    height: auto !important;
+    margin-top: 24px;
+}
+
+.ant-layout-header h1
+{
+    font-size: 6rem;
+    color: #FFDF59 !important;
+    font-weight: bold;
+}
+
+#input-name-player
+{
+    height: 120px;
+    background-color: #FF504D;
+    color: #FFDF59 !important;
+    font-size: 3rem;
+    border: 0;
+    border-bottom: 1px solid #FFDF59;
+}
+
+#input-name-player::placeholder
+{
+    color: #FFDF59 !important;
+}
+
+#button-fight
+{
+    background-color: #FFDF59;
+    border-color: #FFDF59;
+    color: #FF504D;
+    font-weight: bold;
+    height: 50px;
+    width: 100px;
 }
