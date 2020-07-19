@@ -1,13 +1,14 @@
-import Warriors from '../database/Warriors.json';
+import WarriorsDatabase from '../database/Warriors.json';
+import Warrior from '../models/Warrior';
 
 class WarriorRepository
 {
     private static instance: WarriorRepository;
-    private warriors: typeof Warriors;
+    private warriors: Array<Warrior>;
 
     private constructor()
     {
-        this.warriors = Warriors
+        this.warriors = WarriorsDatabase;
     }
 
     public static getInstance(): WarriorRepository
@@ -18,4 +19,10 @@ class WarriorRepository
         }
         return this.instance;
     }
+
+    public getWarriors(): Array<Warrior>
+    {
+        return this.warriors;
+    }
 }
+export default WarriorRepository;
