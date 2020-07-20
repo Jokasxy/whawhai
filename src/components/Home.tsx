@@ -3,6 +3,7 @@ import imageUrlHelper from '../helpers/imageUrlHelper';
 import { Layout, Form, Input, Button, Row, Col } from 'antd';
 import { UpOutlined } from '@ant-design/icons';
 import Warrior from '../models/Warrior';
+import { Link } from 'react-router-dom';
 
 const Home = (warrior: Warrior) =>
 {
@@ -14,11 +15,6 @@ const Home = (warrior: Warrior) =>
     const onFinishFailed = () =>
     {
         console.log('Invalid form data!');
-    }
-
-    const selectWarrior = () =>
-    {
-        console.log('Warrior Selection Menu');
     }
  
     const { Header, Content } = Layout;
@@ -36,7 +32,9 @@ const Home = (warrior: Warrior) =>
                 >
                     <Row gutter={[64, 0]}>
                         <Col span={6}>
-                            <img onClick={selectWarrior} className='avatar' src={imageUrlHelper(warrior.imageName)} />
+                            <Link to='/select-warrior'>
+                                <img className='avatar' src={imageUrlHelper(warrior.imageName)} />
+                            </Link>
                         </Col>
                         <Col span={18}>
                         <Form.Item
