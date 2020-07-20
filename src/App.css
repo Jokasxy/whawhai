@@ -23,6 +23,7 @@
 .ant-layout-content
 {
     max-width: 600px;
+    margin: 0 auto;
 }
 
 .ant-layout-header
@@ -30,6 +31,8 @@
     background: inherit !important;
     height: auto !important;
     margin: 40px auto;
+    color: #FFDF59 !important;
+    width: 100vw;
 }
 
 .ant-layout-header h1

@@ -15,11 +15,11 @@ const App = () =>
         <div className='App'>
             <Router>
                 <Switch>
+                    <Route path='/select-warrior'>
+                        <SelectWarrior {...warrior.name} {...setWarrior} />
+                    </Route>
                     <Route path='/'>
                         <Home {...warrior} />
-                    </Route>
-                    <Route path='select-warrior'>
-                        <SelectWarrior />
                     </Route>
                 </Switch>
             </Router>
