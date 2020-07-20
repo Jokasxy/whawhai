@@ -36,7 +36,7 @@
 {
     font-size: 6rem;
     color: #FFDF59 !important;
-    font-weight: bold;
+    font-family: bangers;
 }
 
 #input-name-player
@@ -45,6 +45,7 @@
     background-color: #FF504D;
     color: #FFDF59 !important;
     font-size: 3rem;
+    font-family: bangers;
     border: 0;
     border-bottom: 1px solid #FFDF59;
 }
@@ -52,6 +53,7 @@
 #input-name-player::placeholder
 {
     color: #FFDF59 !important;
+    text-align: center;
 }
 
 #button-fight
@@ -59,8 +61,8 @@
     background-color: #FFDF59;
     border-color: #FFDF59;
     color: #FF504D;
-    font-weight: bold;
     font-size: 1.3rem;
+    font-family: bangers;
     height: 50px;
     width: 150px;
 }
