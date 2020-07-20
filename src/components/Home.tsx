@@ -2,7 +2,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import WarriorRepository from '../repository/WarriorRepository';
 import imageUrlHelper from '../helpers/imageUrlHelper';
-import { Layout, Form, Input, Button, Select, Row, Col } from 'antd';
+import { Layout, Form, Input, Button, Row, Col } from 'antd';
+import { UpOutlined } from '@ant-design/icons';
 
 const Home = () =>
 {
@@ -37,16 +38,40 @@ const Home = () =>
                 onFinishFailed={onFinishFailed}
                 >
                     <Row gutter={[64, 0]}>
-                        <Col span={6} className='test'>
+                        <Col span={6}>
                             <img onClick={selectWarrior} className='avatar' src={imageUrlHelper(warrior.imageName)} />
                         </Col>
-                        <Col span={18} className='test'>
+                        <Col span={18}>
                         <Form.Item
                         name='name-player'
                         required
                         >
                             <Input id='input-name-player' placeholder='$WARRIOR-NAME' />
                         </Form.Item>
+                        </Col>
+                    </Row>
+                    <Row className='row-round' id='row-round1'>
+                        <Col span={22}>
+                            <div>Attack For Round #1</div>
+                        </Col>
+                        <Col span={2}>
+                            <UpOutlined />
+                        </Col>
+                    </Row>
+                    <Row className='row-round' id='row-round2'>
+                        <Col span={22}>
+                        <div>Attack For Round #2</div>
+                        </Col>
+                        <Col span={2}>
+                            <UpOutlined />
+                        </Col>
+                    </Row>
+                    <Row className='row-round' id='row-round3'>
+                        <Col span={22}>
+                        <div>Attack For Round #3</div>
+                        </Col>
+                        <Col span={2}>
+                            <UpOutlined />
                         </Col>
                     </Row>
                     <Button id='button-fight' type='primary' htmlType='submit'>FIGHT!!!</Button>

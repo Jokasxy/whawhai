@@ -29,7 +29,7 @@
 {
     background: inherit !important;
     height: auto !important;
-    margin-top: 24px;
+    margin: 40px auto;
 }
 
 .ant-layout-header h1
@@ -60,6 +60,33 @@
     border-color: #FFDF59;
     color: #FF504D;
     font-weight: bold;
+    font-size: 1.3rem;
     height: 50px;
-    width: 100px;
+    width: 150px;
+}
+
+.row-round
+{
+    line-height: 1.8rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: left;
+    color: #434343;
+    padding: 20px;
+}
+
+#row-round1
+{
+    background-color: #ffefad;
+}
+
+#row-round2
+{
+    background-color: #ffe788;
+}
+
+#row-round3
+{
+    background-color: #FFDF59;
+    margin-bottom: 50px;
 }
