@@ -1,14 +1,11 @@
 import * as React from 'react';
-import { useState } from 'react';
-import WarriorRepository from '../repository/WarriorRepository';
 import imageUrlHelper from '../helpers/imageUrlHelper';
 import { Layout, Form, Input, Button, Row, Col } from 'antd';
 import { UpOutlined } from '@ant-design/icons';
+import Warrior from '../models/Warrior';
 
-const Home = () =>
+const Home = (warrior: Warrior) =>
 {
-    const [warrior, setWarrior] = useState(WarriorRepository.getInstance().getWarriors()[0]);
-
     const onFinish = () =>
     {
         console.log('FIGHT!!!');
