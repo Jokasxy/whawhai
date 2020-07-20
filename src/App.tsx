@@ -16,7 +16,7 @@ const App = () =>
             <Router>
                 <Switch>
                     <Route path='/select-warrior'>
-                        <SelectWarrior {...warrior.name} {...setWarrior} />
+                        <SelectWarrior {...warrior} {...setWarrior} />
                     </Route>
                     <Route path='/'>
                         <Home {...warrior} />

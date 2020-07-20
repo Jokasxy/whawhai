@@ -7,7 +7,7 @@
     {
         "name" : "Dragon",
         "attacks" : ["Fire-Spitting", "Dragon-Claw", "Pound"],
-        "imageName" : "avatar_tesla.svg"
+        "imageName" : "avatar_dragon.svg"
     },
     {
         "name" : "Tesla",
