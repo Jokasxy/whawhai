@@ -3,12 +3,36 @@ import imageUrlHelper from '../helpers/imageUrlHelper';
 import { Layout, Form, Input, Button, Row, Col, Select } from 'antd';
 import Warrior from '../models/Warrior';
 import { Link } from 'react-router-dom';
+import { api } from '../api/Api';
 
 const Home = (warrior: Warrior) =>
 {
-    const onFinish = () =>
+    const onFinish = (values: Object) =>
     {
-        console.log('FIGHT!!!');
+        console.log('Fight!!! => Redirrected to register!');
+
+        const valuesObject = Object.create(values);
+
+        api.post('/',
+        {
+            'jsonrpc': '2.0',
+            'id': Math.random().toString(),
+            'method': 'Register',
+            'params':
+            {
+                'Application':
+                {
+                    'Name': valuesObject.namePlayer,
+                    'WarriorType': warrior.id,
+                    'Attacks': [valuesObject.selectRound1, valuesObject.selectRound2, valuesObject.selectRound3]
+                }
+            }
+        })
+        .then(response =>
+        {
+            console.log(response.data?.error?.code);
+            console.log(response.data?.result?.id);
+        })
     }
 
     const onFinishFailed = () =>
@@ -37,7 +61,7 @@ const Home = (warrior: Warrior) =>
                             </Link>
                         </Col>
                         <Col span={18}>
-                        <Form.Item name='name-player' required>
+                        <Form.Item name='namePlayer' required>
                             <Input id='input-name-player' placeholder='$WARRIOR-NAME' />
                         </Form.Item>
                         </Col>
@@ -45,12 +69,12 @@ const Home = (warrior: Warrior) =>
                     {
                         rounds.map((round, key) =>
                         (
-                            <Form.Item className='form-row-round' name={`select-round${round}`} required key={key}>
+                            <Form.Item className='form-row-round' name={`selectRound${round}`} required key={key}>
                                 <Select dropdownStyle={{backgroundColor: '#FFE992'}} className='row-round' id={`row-round${round}`} placeholder={`Attack For Round #${round}`}>
                                     {
                                         warrior.attacks.map((attack, key) =>
                                         (
-                                            <Select.Option value={attack} key={key}>{attack}</Select.Option>
+                                            <Select.Option value={key} key={key}>{attack}</Select.Option>
                                         ))
                                     }
                                 </Select>
