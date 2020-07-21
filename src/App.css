@@ -69,32 +69,26 @@
     font-family: bangers;
     height: 50px;
     width: 150px;
+    margin-top: 50px;
+}
+
+.ant-select-selector
+{
+    background-color: #FFDF59 !important;
 }
 
 .row-round
 {
-    line-height: 1.8rem;
-    font-size: 1.7rem;
+    line-height: 1.8rem !important;
+    font-size: 1.7rem !important;
     font-weight: bold;
     text-align: left;
     color: #434343;
-    padding: 20px;
 }
 
-#row-round1
+.ant-select-selector::placeholder
 {
-    background-color: #ffefad;
-}
-
-#row-round2
-{
-    background-color: #ffe788;
-}
-
-#row-round3
-{
-    background-color: #FFDF59;
-    margin-bottom: 50px;
+    color: #434343 !important;
 }
 
 #icon-back
@@ -106,4 +100,9 @@
 #row-avatar
 {
     margin-top: 0 !important;
+}
+
+.form-row-round
+{
+    margin: 0 !important;
 }

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import imageUrlHelper from '../helpers/imageUrlHelper';
-import { Layout, Form, Input, Button, Row, Col } from 'antd';
-import { UpOutlined } from '@ant-design/icons';
+import { Layout, Form, Input, Button, Row, Col, Select } from 'antd';
 import Warrior from '../models/Warrior';
 import { Link } from 'react-router-dom';
 
@@ -18,6 +17,7 @@ const Home = (warrior: Warrior) =>
     }
  
     const { Header, Content } = Layout;
+    const rounds = [1, 2, 3];
 
     return (
         <Layout>
@@ -37,38 +37,26 @@ const Home = (warrior: Warrior) =>
                             </Link>
                         </Col>
                         <Col span={18}>
-                        <Form.Item
-                        name='name-player'
-                        required
-                        >
+                        <Form.Item name='name-player' required>
                             <Input id='input-name-player' placeholder='$WARRIOR-NAME' />
                         </Form.Item>
                         </Col>
                     </Row>
-                    <Row className='row-round' id='row-round1'>
-                        <Col span={22}>
-                            <div>Attack For Round #1</div>
-                        </Col>
-                        <Col span={2}>
-                            <UpOutlined />
-                        </Col>
-                    </Row>
-                    <Row className='row-round' id='row-round2'>
-                        <Col span={22}>
-                        <div>Attack For Round #2</div>
-                        </Col>
-                        <Col span={2}>
-                            <UpOutlined />
-                        </Col>
-                    </Row>
-                    <Row className='row-round' id='row-round3'>
-                        <Col span={22}>
-                        <div>Attack For Round #3</div>
-                        </Col>
-                        <Col span={2}>
-                            <UpOutlined />
-                        </Col>
-                    </Row>
+                    {
+                        rounds.map((round, key) =>
+                        (
+                            <Form.Item className='form-row-round' name={`select-round${round}`} required key={key}>
+                                <Select dropdownStyle={{backgroundColor: '#FFE992'}} className='row-round' id={`row-round${round}`} placeholder={`Attack For Round #${round}`}>
+                                    {
+                                        warrior.attacks.map((attack, key) =>
+                                        (
+                                            <Select.Option value={attack} key={key}>{attack}</Select.Option>
+                                        ))
+                                    }
+                                </Select>
+                            </Form.Item>
+                        ))
+                    }
                     <Button id='button-fight' type='primary' htmlType='submit'>FIGHT!!!</Button>
                 </Form>
             </Content>

@@ -1,9 +1,7 @@
-import * as React from 'react';
-
 interface Warrior
 {
-    name: String,
-    attacks: Array<String>,
-    imageName: String
+    name: string,
+    attacks: Array<string>,
+    imageName: string
 }
 export default Warrior;
