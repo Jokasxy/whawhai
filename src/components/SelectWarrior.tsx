@@ -25,7 +25,7 @@ const SelectWarrior = (props: any) =>
                     {
                         warriors.map((warrior, key) =>
                         (
-                            (warrior.name !== props.warriorName) &&
+                            (warrior.id !== props.warriorId) &&
                             <Col span={12} key={key}>
                                 <Link to='/'>
                                     <img className='avatar' src={imageUrlHelper(warrior.imageName)} onClick={() => props.onClick(warrior)} />

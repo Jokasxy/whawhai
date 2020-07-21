@@ -1,25 +1,30 @@
 [
     {
+        "id" : 1,
         "name" : "Marvin",
         "attacks" : ["Depression #1", "Depression #2", "Depression #3"],
         "imageName" : "avatar_marvin.svg"
     },
     {
+        "id" : 2,
         "name" : "Dragon",
         "attacks" : ["Fire-Spitting", "Dragon-Claw", "Pound"],
         "imageName" : "avatar_dragon.svg"
     },
     {
+        "id" : 3,
         "name" : "Tesla",
         "attacks" : ["Shaker-Machine", "AC voltage", "Radio Waves"],
         "imageName" : "avatar_tesla.svg"
     },
     {
+        "id" : 4,
         "name" : "Hackerman",
         "attacks" : ["Cyber", "System32 Error", "Norton Antivirus"],
         "imageName" : "avatar_hackerman.svg"
     },
     {
+        "id" : 5,
         "name" : "Unicorn",
         "attacks" : ["Rainbowshit", "Candypuke", "Cornlove"],
         "imageName" : "avatar_unicorn.svg"
