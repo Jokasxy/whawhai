@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import WarriorRepository from './repository/WarriorRepository';
+import Warrior from './models/Warrior';
 import Home from './components/Home';
 import SelectWarrior from './components/SelectWarrior';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -16,7 +17,7 @@ const App = () =>
             <Router>
                 <Switch>
                     <Route path='/select-warrior'>
-                        <SelectWarrior {...warrior} {...setWarrior} />
+                        <SelectWarrior onClick={(selectedWarrior: Warrior) => setWarrior(selectedWarrior)} warriorName={warrior.name} />
                     </Route>
                     <Route path='/'>
                         <Home {...warrior} />

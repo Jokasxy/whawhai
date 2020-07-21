@@ -4,9 +4,8 @@ import { Layout, Row, Col } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import WarriorRepository from '../repository/WarriorRepository';
-import Warrior from '../models/Warrior';
 
-const SelectWarrior = (warrior: Warrior, setWarrior: any) =>
+const SelectWarrior = (props: any) =>
 {
     const warriors = WarriorRepository.getInstance().getWarriors();
     const { Header, Content } = Layout;
@@ -24,11 +23,13 @@ const SelectWarrior = (warrior: Warrior, setWarrior: any) =>
             <Content>
                 <Row gutter={[0, 64]} id='row-avatar'>
                     {
-                        warriors.map((warriorMapped, key) =>
+                        warriors.map((warrior, key) =>
                         (
-                            (warriorMapped.name !== warrior.name) &&
+                            (warrior.name !== props.warriorName) &&
                             <Col span={12} key={key}>
-                                <img className='avatar' src={imageUrlHelper(warriorMapped.imageName)} />
+                                <Link to='/'>
+                                    <img className='avatar' src={imageUrlHelper(warrior.imageName)} onClick={() => props.onClick(warrior)} />
+                                </Link>
                             </Col>
                         ))
                     }
