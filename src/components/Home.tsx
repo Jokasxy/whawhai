@@ -33,6 +33,10 @@ const Home = (warrior: Warrior) =>
             console.log(response.data?.error?.code);
             console.log(response.data?.result?.id);
         })
+        .catch(error =>
+        {
+            console.log(error);
+        })
     }
 
     const onFinishFailed = () =>
